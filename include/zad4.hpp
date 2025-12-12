@@ -2,21 +2,21 @@
 
 #include <vector>
 
-double obliczakMake(const std::vector< tagiatelle >& Makaron)
+// tutaj funkcja obliczMake
+
+double obliczMake(const std::vector< Tagliatelle >& Makaron)
 {
     double M = 0.0;
-    unsigned mnoznik = 1;
-    for (auto it = Makarony.rbegin(); it != Makarony.rend(); ++it)
+    std::size_t i = 1u;
+    for (auto it = Makaron.crbegin(); it != Makaron.crend(); ++it)
     {
-        M += Makaron->ileMaki(mnoznik);
-        ++mnoznik;
+        M += it->ileMaki(i++);
     }   
-
     if (M>100.0)
     {
         throw 404;
     }
-    else if (M> 50.0)
+    if (M> 50.0)
     {
         throw 3.14;
     }
