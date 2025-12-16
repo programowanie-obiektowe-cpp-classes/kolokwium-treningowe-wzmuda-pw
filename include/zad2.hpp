@@ -7,14 +7,14 @@
 
 // tutaj klasa Penne
 
-class Penne : public Makaron
+class Penne : public Makaron // penne dziedziczy po makaronie i nadpisuje ileMaki
 {
 public:
-    double ileMaki(unsigned P) const { return P; }
+    double ileMaki(unsigned P) const { return P; } // nadpisana metoda ileMaki zwracajaca ilosc maki
 };
 // tutaj definicja metody gotujMakaron
 
-Makaron* Makaron::gotujMakaron(const std::string& s)
+Makaron* Makaron::gotujMakaron(const std::string& s) // definicja statycznej metody gotujMakaron
 {
 
     if (s.empty())
@@ -33,3 +33,6 @@ Makaron* Makaron::gotujMakaron(const std::string& s)
 }
 
 
+// jezeli pierwszta i ostatnia litera sa takie same to tworzy Tagliatelle z parametrami 3.14, 0.42,
+// 0.1
+// w przeciwnym wypadku tworzy Penne
